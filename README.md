@@ -30,7 +30,7 @@ GitHub Pages | Free deployment & hosting
 
 ## Project Structure
 FUTURE_FS_01/
-index.html      # Main HTML structure
-style.css       # All styles & responsive design
-script.js       # Animations & interactivity
-README.md       # Project documentation
+- index.html      # Main HTML structure
+- style.css       # All styles & responsive design
+- script.js       # Animations & interactivity
+- README.md       # Project documentation
