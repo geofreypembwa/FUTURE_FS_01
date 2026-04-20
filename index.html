@@ -2,45 +2,96 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Geofrey Emmanuel Pembwa - Full Stack Developer Portfolio" />
-  <title>Geofrey Emmanuel Pembwa | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="description"
+    content="Geofrey.dev - Portfolio of Geofrey Emmanuel Pembwa, a Computer Science student and aspiring software developer building modern, responsive, and impactful digital solutions."
+  />
+  <meta
+    name="keywords"
+    content="Geofrey Emmanuel Pembwa, Geofrey.dev, portfolio, software developer, full stack developer, Tanzania, web developer"
+  />
+  <meta name="author" content="Geofrey Emmanuel Pembwa" />
+
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+  <meta property="og:title" content="Geofrey.dev | Geofrey Emmanuel Pembwa" />
+  <meta
+    property="og:description"
+    content="Computer Science student and aspiring software developer building modern, responsive, and impactful digital solutions."
+  />
+  <meta property="og:image" content="https://geofreypembwa.github.io/FUTURE_FS_01/assets/profile.jpg" />
+  <meta property="og:url" content="https://geofreypembwa.github.io/FUTURE_FS_01/" />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Geofrey.dev | Geofrey Emmanuel Pembwa" />
+  <meta
+    name="twitter:description"
+    content="Computer Science student and aspiring software developer building modern, responsive, and impactful digital solutions."
+  />
+  <meta name="twitter:image" content="https://geofreypembwa.github.io/FUTURE_FS_01/assets/profile.jpg" />
+
+  <title>Geofrey.dev | Geofrey Emmanuel Pembwa</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <nav>
+  <nav id="navbar">
     <div class="logo">Geofrey.dev</div>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#vision">Vision</a></li>
-      <li><a href="#resume">Resume</a></li>
-      <li><a href="#contact">Contact</a></li>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#experience" class="nav-link">Experience & Leadership</a></li>
+      <li><a href="#resume" class="nav-link">Resume</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
-    <div class="hamburger" id="hamburger">
-      <span></span><span></span><span></span>
-    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 
   <section id="hero">
-    <div class="hero-content">
-      <p class="hero-greeting">👋 Hello, I'm</p>
-      <h1>Geofrey Emmanuel Pembwa.</h1>
-      <h2 class="hero-sub">A Future-Focused <span>Full Stack Developer</span></h2>
-      <p class="hero-desc">
-        I build modern, responsive, and user-focused web applications
-        that solve real-world problems.
-      </p>
-      <p class="hero-intro">
-        I am a Computer Science student passionate about technology, leadership,
-        and building impactful digital solutions. I combine technical skills with
-        strategic thinking to create systems that are not only functional but meaningful.
-      </p>
-      <div class="hero-buttons">
-        <a href="#projects" class="btn">View My Work</a>
-        <a href="#contact" class="btn outline">Contact Me</a>
+    <div class="hero-layout">
+      <div class="hero-content">
+        <p class="hero-greeting">👋 Hello, I'm</p>
+        <h1>Geofrey Emmanuel Pembwa</h1>
+        <h2 class="hero-sub">
+          <span id="typing-text"></span>
+        </h2>
+
+        <p class="hero-desc">
+          I am a Computer Science student and aspiring software developer passionate about
+          building modern, responsive, and user-focused digital solutions that solve real-world problems.
+        </p>
+
+        <p class="hero-intro">
+          I am growing into a product-oriented software engineer with interests in full-stack development,
+          backend systems, AI integration, and meaningful technology that creates opportunities and impact.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="btn">View My Work</a>
+          <a href="assets/Geofrey_Emmanuel_Pembwa_CV.pdf" class="btn outline" download>Download CV</a>
+          <a href="https://wa.me/255747998460" target="_blank" class="btn whatsapp-btn">WhatsApp Me</a>
+        </div>
+
+        <div class="hero-contact-quick">
+          <a href="mailto:geofreypembwa001@gmail.com">📧 Email</a>
+          <a href="tel:+255747998460">📞 Call</a>
+          <a href="https://www.linkedin.com/in/geofrey-pembwa-ab026b395?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">💼 LinkedIn</a>
+          <a href="https://github.com/geofreypembwa" target="_blank">🐙 GitHub</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="assets/profile.jpg" alt="Portrait of Geofrey Emmanuel Pembwa" />
       </div>
     </div>
   </section>
@@ -50,26 +101,26 @@
     <div class="about-content">
       <div class="about-text">
         <p>
-          I am a Computer Science student with a strong interest in full-stack
-          web development, AI and data science integrated, problem-solving, and digital innovation.
+          I am a Computer Science student based in Dar es Salaam, Tanzania, with a strong interest in
+          software engineering, full-stack web development, backend systems, and AI integration.
         </p>
         <p>
-          Beyond coding, I am passionate about leadership, youth empowerment,
-          and building systems that create real impact in society.
+          I enjoy building practical and meaningful software solutions that solve real-world problems,
+          improve user experience, and create opportunities for people and businesses.
         </p>
         <p>
-          I believe technology is not just about writing code; it is about
-          solving problems, improving lives, and creating opportunities.
+          Beyond coding, I am passionate about leadership, youth empowerment, and using technology
+          as a tool for innovation, growth, and societal impact.
         </p>
         <p>
-          I am continuously learning, building, and improving my skills to become
-          a professional developer capable of working on real-world projects and
-          delivering value.
+          My goal is to continuously learn, build, and improve until I become a highly skilled developer
+          capable of delivering complete and valuable software products.
         </p>
       </div>
+
       <div class="about-stats">
         <div class="stat">
-          <span class="stat-number">4+</span>
+          <span class="stat-number">6+</span>
           <span class="stat-label">Projects Built</span>
         </div>
         <div class="stat">
@@ -77,8 +128,8 @@
           <span class="stat-label">Internship</span>
         </div>
         <div class="stat">
-          <span class="stat-number">2+</span>
-          <span class="stat-label">Languages</span>
+          <span class="stat-number">3+</span>
+          <span class="stat-label">Programming Languages</span>
         </div>
       </div>
     </div>
@@ -86,10 +137,10 @@
 
   <section id="skills">
     <h2>Skills & Technologies</h2>
-    <div class="skills-categories">
 
+    <div class="skills-categories">
       <div class="skill-group">
-        <h3>Frontend</h3>
+        <h3>Web Development</h3>
         <div class="skills-grid">
           <div class="skill-card">HTML5</div>
           <div class="skill-card">CSS3</div>
@@ -101,7 +152,7 @@
       <div class="skill-group">
         <h3>Programming</h3>
         <div class="skills-grid">
-          <div class="skill-card"> C  </div>
+          <div class="skill-card">C</div>
           <div class="skill-card">Python</div>
           <div class="skill-card">Java</div>
         </div>
@@ -113,6 +164,7 @@
           <div class="skill-card">GitHub</div>
           <div class="skill-card">VS Code</div>
           <div class="skill-card">Chrome DevTools</div>
+          <div class="skill-card">AI Tools</div>
         </div>
       </div>
 
@@ -121,147 +173,196 @@
         <div class="skills-grid">
           <div class="skill-card">Problem Solving</div>
           <div class="skill-card">Leadership</div>
-           <div class="skill-card">Professional Networking</div>
           <div class="skill-card">Communication</div>
           <div class="skill-card">Critical Thinking</div>
+          <div class="skill-card">Strategic Thinking</div>
         </div>
       </div>
-
     </div>
   </section>
 
   <section id="projects">
-    <h2>My Projects</h2>
+    <h2>Projects</h2>
     <div class="projects-grid">
 
       <div class="project-card featured">
         <div class="project-badge">⭐ Featured</div>
         <h3>Inventory Management System</h3>
         <p>
-          A console-based system built in C with full CRUD operations,
-          file persistence, and dynamic memory management. Designed to
-          handle real inventory workflows efficiently.
+          A C-based inventory management application that supports adding, updating,
+          deleting, and tracking products using file storage and dynamic memory handling.
         </p>
         <div class="tags">
           <span>C</span>
+          <span>CRUD</span>
           <span>File Handling</span>
           <span>Dynamic Memory</span>
         </div>
-        <a href="https://github.com/geofreypembwa" target="_blank" class="btn small">View on GitHub</a>
+        <div class="project-links">
+          <a href="https://github.com/geofreypembwa/Inventory-Management-System-c" target="_blank" class="btn small">
+            GitHub Repo
+          </a>
+        </div>
       </div>
 
       <div class="project-card">
         <h3>Personal Portfolio Website</h3>
         <p>
-          A professional portfolio website built to showcase my skills,
-          projects, and background as a developer. Responsive, modern,
-          and SEO-friendly.
+          A responsive personal portfolio website built with HTML, CSS, and JavaScript
+          to showcase my skills, projects, experience, and contact information professionally.
         </p>
         <div class="tags">
           <span>HTML</span>
           <span>CSS</span>
           <span>JavaScript</span>
+          <span>Responsive Design</span>
         </div>
-        <a href="https://github.com/geofreypembwa" target="_blank" class="btn small">View on GitHub</a>
+        <div class="project-links">
+          <a href="https://geofreypembwa.github.io/FUTURE_FS_01/" target="_blank" class="btn small">
+            Live Demo
+          </a>
+          <a href="https://github.com/geofreypembwa/FUTURE_FS_01" target="_blank" class="btn small outline">
+            GitHub Repo
+          </a>
+        </div>
       </div>
 
       <div class="project-card">
         <h3>Client Lead Management System</h3>
         <p>
-          A Mini CRM system designed to help businesses manage clients
-          leads, track progress from new to converted, and improve
-          Overall client conversion rates.
+          A mini CRM system for tracking client leads, updating lead status, storing
+          follow-up notes, and supporting business conversion workflows through a simple admin dashboard.
         </p>
         <div class="tags">
+          <span>React</span>
           <span>Node.js</span>
           <span>Express</span>
           <span>MongoDB</span>
-          <span>React</span>
         </div>
-        <a href="https://github.com/geofreypembwa" target="_blank" class="btn small">View on GitHub</a>
+        <div class="project-links">
+          <a href="#" class="btn small">In Progress</a>
+        </div>
       </div>
 
       <div class="project-card">
         <h3>Student Grade Analyzer</h3>
         <p>
-          Calculates average, min, max grades and classifies results
-          with letter grades and pass/fail logic using structured
-          C programming.
+          A structured C program that analyzes student performance by calculating averages,
+          identifying minimum and maximum scores, and assigning grade classifications.
         </p>
         <div class="tags">
           <span>C</span>
           <span>Functions</span>
           <span>Logic</span>
+          <span>Grading System</span>
         </div>
-        <a href="https://github.com/geofreypembwa" target="_blank" class="btn small">View on GitHub</a>
+       <div class="project-links">
+          <a href="https://github.com/geofreypembwa/Student-Marks-Average-c" target="_blank" class="btn small">
+            GitHub Repo
+          </a>
+        </div>
       </div>
 
       <div class="project-card">
         <h3>Local Business Website</h3>
         <p>
-          A real-world website built for a local business to improve
-          online presence, attract customers, and display services
-          with a mobile-friendly design.
+          A responsive business website created to help a local business present its services online,
+          improve visibility, and provide customers with clear contact and service information.
         </p>
         <div class="tags">
           <span>HTML</span>
           <span>CSS</span>
           <span>JavaScript</span>
+          <span>Business Website</span>
         </div>
-        <a href="https://github.com/geofreypembwa" target="_blank" class="btn small">View on GitHub</a>
+        <div class="project-links">
+          <a href="#" class="btn small">In Progress</a>
+        </div>
       </div>
 
       <div class="project-card">
         <h3>Number Guessing Game</h3>
         <p>
-          An interactive console game featuring input validation,
-          feedback logic, and loop control flow — built as a
-          foundation for game logic thinking.
+          A simple C-based number guessing game that uses random number generation,
+          input validation, and loop control to create an interactive user experience.
         </p>
         <div class="tags">
           <span>C</span>
           <span>Control Flow</span>
           <span>Input Validation</span>
+          <span>Game Logic</span>
         </div>
-        <a href="https://github.com/geofreypembwa" target="_blank" class="btn small">View on GitHub</a>
+        <div class="project-links">
+          <a href="https://github.com/geofreypembwa/C-Number-Guessing-Game" target="_blank" class="btn small">
+            GitHub Repo
+          </a>
+        </div>
       </div>
 
     </div>
   </section>
 
-  
-  <section id="vision">
-    <h2>My Vision</h2>
-    <div class="vision-content">
-      <p>
-        My goal is to become a highly skilled full stack developer and
-        contribute to building impactful digital solutions.
-      </p>
-      <p>
-        I aim to work on real-world projects, collaborate with innovative
-        teams, and eventually build systems that empower businesses and
-        communities across Africa and beyond.
-      </p>
-      <p>
-        I am also deeply interested in using technology to support youth
-        development, leadership, and social change.
-      </p>
+  <section id="experience">
+    <h2>Experience & Leadership</h2>
+    <div class="resume-grid">
+      <div class="resume-column">
+        <h3>💼 Experience</h3>
+
+        <div class="resume-item">
+          <span class="resume-title">Full Stack Development Intern</span>
+          <span class="resume-place">Future Interns Program</span>
+          <span class="resume-date">Apr 2026 – May 2026</span>
+          <span class="resume-desc">
+            Built practical web development projects including a professional portfolio website,
+            a mini CRM system, and a local business website while strengthening frontend,
+            problem-solving, and project workflow skills.
+          </span>
+        </div>
+
+        <div class="resume-item">
+          <span class="resume-title">Volunteer Teacher</span>
+          <span class="resume-place">Igelegele Secondary School</span>
+          <span class="resume-desc">
+            Supported students through teaching and guidance while developing communication,
+            leadership, and public engagement skills.
+          </span>
+        </div>
+      </div>
+
+      <div class="resume-column">
+        <h3>🏛 Leadership</h3>
+
+        <div class="resume-item">
+          <span class="resume-title">Chairperson</span>
+          <span class="resume-place">IGSS Dream Visionaries</span>
+          <span class="resume-desc">
+            Lead a structured youth group focused on governance, coordination, collaboration,
+            and long-term social and economic development planning among members.
+          </span>
+        </div>
+
+        <div class="resume-item">
+          <span class="resume-title">Personal Growth Focus</span>
+          <span class="resume-place">Technology, Service & Impact</span>
+          <span class="resume-desc">
+            Continuously building technical expertise, discipline, and leadership capacity
+            to create systems that deliver meaningful impact in communities and organizations.
+          </span>
+        </div>
+      </div>
     </div>
   </section>
 
-  
   <section id="resume">
     <h2>Resume</h2>
     <div class="resume-content">
-
       <p class="resume-summary">
-        A motivated Computer Science student with foundational knowledge in
-        full stack development, passionate about building real-world applications
-        and continuously improving technical and leadership skills.
+        A motivated Computer Science student with foundational knowledge in software development
+        and full-stack technologies. Passionate about building real-world applications,
+        solving problems, and continuously improving both technical and leadership skills.
       </p>
 
       <div class="resume-grid">
-
         <div class="resume-column">
           <h3>🎓 Education</h3>
           <div class="resume-item">
@@ -269,6 +370,7 @@
             <span class="resume-place">University of Dar es Salaam (CoICT)</span>
             <span class="resume-date">Nov 2025 – Present</span>
           </div>
+
           <div class="resume-item">
             <span class="resume-title">Secondary Education</span>
             <span class="resume-place">Completed – 2022</span>
@@ -276,61 +378,65 @@
         </div>
 
         <div class="resume-column">
-          <h3>💼 Experience</h3>
+          <h3>🎯 Focus Areas</h3>
           <div class="resume-item">
-            <span class="resume-title">Full Stack Development Intern</span>
-            <span class="resume-place">Future Interns Program</span>
-            <span class="resume-date">Apr 2026 – May 2026</span>
+            <span class="resume-title">Current Learning Direction</span>
             <span class="resume-desc">
-              Built real-world projects including portfolio website,
-              CRM system, and local business website.
+              Java fundamentals, HTML, CSS, JavaScript, Git/GitHub, project building,
+              and backend development preparation.
             </span>
           </div>
+
           <div class="resume-item">
-            <span class="resume-title">Volunteer Teacher</span>
-            <span class="resume-place">Igelegele Secondary School</span>
+            <span class="resume-title">Career Direction</span>
             <span class="resume-desc">
-              Guided students and strengthened communication and
-              leadership skills.
+              Product-oriented software engineering, backend depth,
+              full-stack development, and AI integration.
             </span>
           </div>
         </div>
-
       </div>
 
       <div class="resume-download">
-        <a href="mailto:geofreypembwa001@gmail.com" class="btn outline">Request Full CV</a>
+        <a href="assets/Geofrey_Emmanuel_Pembwa_CV.pdf" class="btn outline" download>Download Full CV</a>
       </div>
-
     </div>
   </section>
-
 
   <section id="contact">
     <h2>Get In Touch</h2>
     <p class="contact-intro">
-      I'm open to opportunities, collaborations, and projects.
-      Feel free to reach out.
+      I’m open to internships, collaborations, freelance opportunities, and meaningful tech projects.
+      Feel free to reach out through email, call, WhatsApp, or the contact form below.
     </p>
-    <div class="contact-wrapper">
 
+    <div class="contact-wrapper">
       <div class="contact-info">
         <div class="contact-item">
           <span class="contact-icon">📧</span>
           <a href="mailto:geofreypembwa001@gmail.com">geofreypembwa001@gmail.com</a>
         </div>
+
         <div class="contact-item">
           <span class="contact-icon">📞</span>
-          <span>+255 747 998 460</span>
+          <a href="tel:+255747998460">+255 747 998 460</a>
         </div>
+
+        <div class="contact-item">
+          <span class="contact-icon">💬</span>
+          <a href="https://wa.me/255747998460" target="_blank">Chat on WhatsApp</a>
+        </div>
+
         <div class="contact-item">
           <span class="contact-icon">📍</span>
           <span>Dar es Salaam, Tanzania</span>
         </div>
+
         <div class="contact-item">
           <span class="contact-icon">💼</span>
-          <a href="https://www.linkedin.com/in/geofrey-pembwa-ab026b395" target="_blank">LinkedIn Profile</a>
+          <a href="https://www.linkedin.com/in/geofrey-pembwa-ab026b395?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">LinkedIn Profile</a>
         </div>
+
         <div class="contact-item">
           <span class="contact-icon">🐙</span>
           <a href="https://github.com/geofreypembwa" target="_blank">GitHub Profile</a>
@@ -338,27 +444,27 @@
       </div>
 
       <form class="contact-form" id="contactForm">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <input type="text" id="name" name="name" placeholder="Your Name" required />
+        <input type="email" id="email" name="email" placeholder="Your Email" required />
+        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
         <button type="submit" class="btn">Send Message</button>
-        <p class="form-success" id="formSuccess">✅ Message sent! I'll get back to you soon.</p>
+        <p class="form-status" id="formStatus"></p>
       </form>
-
     </div>
   </section>
 
-  
   <footer>
     <p>© 2026 Geofrey Emmanuel Pembwa (Tristian). All rights reserved.</p>
     <p class="footer-sub">Built with passion and purpose. 🇹🇿</p>
     <div class="footer-links">
       <a href="https://github.com/geofreypembwa" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/geofrey-pembwa-ab026b395" target="_blank">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/geofrey-pembwa-ab026b395?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">LinkedIn</a>
       <a href="mailto:geofreypembwa001@gmail.com">Email</a>
+      <a href="https://wa.me/255747998460" target="_blank">WhatsApp</a>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
