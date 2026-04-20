@@ -1,80 +1,163 @@
-// ===== NAVBAR: Hide/Show on Scroll =====
-let lastScroll = 0;
-const nav = document.querySelector('nav');
+// ===== EMAILJS INIT =====
+emailjs.init("02gVOA-azCFSaCSvL");
 
-window.addEventListener('scroll', () => {
+// ===== ELEMENTS =====
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+const navbar = document.getElementById("navbar");
+const sections = document.querySelectorAll("section");
+const links = document.querySelectorAll(".nav-link");
+const typingText = document.getElementById("typing-text");
+const form = document.getElementById("contactForm");
+const formStatus = document.getElementById("formStatus");
+
+// ===== MOBILE MENU =====
+if (hamburger && navLinks) {
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+    hamburger.classList.toggle("active");
+  });
+
+  // Close mobile menu when clicking nav links
+  document.querySelectorAll(".nav-link").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("show");
+      hamburger.classList.remove("active");
+    });
+  });
+
+  // Close mobile menu when clicking outside
+  document.addEventListener("click", (e) => {
+    const isClickInsideMenu = navLinks.contains(e.target);
+    const isClickHamburger = hamburger.contains(e.target);
+
+    if (!isClickInsideMenu && !isClickHamburger) {
+      navLinks.classList.remove("show");
+      hamburger.classList.remove("active");
+    }
+  });
+}
+
+// ===== NAVBAR HIDE/SHOW ON SCROLL =====
+let lastScroll = 0;
+
+window.addEventListener("scroll", () => {
   const currentScroll = window.scrollY;
-  if (currentScroll > lastScroll && currentScroll > 100) {
-    nav.style.transform = 'translateY(-100%)';
-    nav.style.transition = 'transform 0.3s ease';
-  } else {
-    nav.style.transform = 'translateY(0)';
+
+  if (navbar) {
+    if (currentScroll > lastScroll && currentScroll > 100) {
+      navbar.style.transform = "translateY(-100%)";
+    } else {
+      navbar.style.transform = "translateY(0)";
+    }
   }
+
   lastScroll = currentScroll;
 });
 
-// ===== ACTIVE NAV LINK on Scroll =====
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('nav ul a');
+// ===== ACTIVE NAV LINK =====
+window.addEventListener("scroll", () => {
+  let currentSection = "";
 
-window.addEventListener('scroll', () => {
-  let current = '';
   sections.forEach(section => {
-    const sectionTop = section.offsetTop - 100;
-    if (window.scrollY >= sectionTop) {
-      current = section.getAttribute('id');
+    const sectionTop = section.offsetTop - 140;
+    const sectionHeight = section.offsetHeight;
+
+    if (
+      window.scrollY >= sectionTop &&
+      window.scrollY < sectionTop + sectionHeight
+    ) {
+      currentSection = section.getAttribute("id");
     }
   });
 
-  navLinks.forEach(link => {
-    link.style.color = '#e0e0e0';
-    if (link.getAttribute('href') === `#${current}`) {
-      link.style.color = '#00d4ff';
+  links.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === `#${currentSection}`) {
+      link.classList.add("active");
     }
   });
 });
 
-// ===== FADE IN SECTIONS on Scroll =====
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
-    }
-  });
-}, { threshold: 0.1 });
+// ===== REVEAL ANIMATION =====
+const revealElements = document.querySelectorAll(
+  "section, .project-card, .stat, .skill-card, .contact-item, .resume-item"
+);
 
-sections.forEach(section => {
-  section.style.opacity = '0';
-  section.style.transform = 'translateY(30px)';
-  section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-  observer.observe(section);
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.12 }
+);
+
+revealElements.forEach(el => {
+  el.classList.add("reveal");
+  observer.observe(el);
 });
 
-// ===== TYPING EFFECT in Hero =====
-const heroText = "Computer Science Student | Aspiring Software Developer & AI Engineer";
-const typingEl = document.querySelector('#hero p');
-typingEl.textContent = '';
-let i = 0;
+// ===== TYPING EFFECT =====
+const roles = [
+  "Computer Science Student",
+  "Aspiring Software Developer",
+  "Future Full-Stack Engineer",
+  "Builder of Real-World Solutions"
+];
 
-function type() {
-  if (i < heroText.length) {
-    typingEl.textContent += heroText.charAt(i);
-    i++;
-    setTimeout(type, 35);
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeEffect() {
+  if (!typingText) return;
+
+  const currentRole = roles[roleIndex];
+  const displayedText = isDeleting
+    ? currentRole.substring(0, charIndex--)
+    : currentRole.substring(0, charIndex++);
+
+  typingText.textContent = displayedText;
+
+  let speed = isDeleting ? 50 : 90;
+
+  if (!isDeleting && charIndex === currentRole.length + 1) {
+    speed = 1400;
+    isDeleting = true;
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    roleIndex = (roleIndex + 1) % roles.length;
+    speed = 250;
   }
+
+  setTimeout(typeEffect, speed);
 }
 
-window.addEventListener('load', type);
-// ===== CONTACT FORM =====
-const form = document.getElementById('contactForm');
-const formSuccess = document.getElementById('formSuccess');
+window.addEventListener("load", typeEffect);
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  formSuccess.style.display = 'block';
-  form.reset();
-  setTimeout(() => {
-    formSuccess.style.display = 'none';
-  }, 4000);
-});
+// ===== CONTACT FORM WITH EMAILJS =====
+if (form && formStatus) {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    formStatus.textContent = "Sending message...";
+    formStatus.style.color = "#00d4ff";
+
+    emailjs
+      .sendForm("service_nf13mo5", "template_3pb4nzj", this)
+      .then(() => {
+        formStatus.textContent = "✅ Message sent successfully!";
+        formStatus.style.color = "#25d366";
+        form.reset();
+      })
+      .catch((error) => {
+        formStatus.textContent = "❌ Failed to send message. Please try again.";
+        formStatus.style.color = "#ff4d4d";
+        console.error("EmailJS Error:", error);
+      });
+  });
+}
